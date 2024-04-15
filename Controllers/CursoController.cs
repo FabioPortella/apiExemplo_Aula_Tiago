@@ -82,7 +82,7 @@ public class CursoController : ControllerBase
     {
         try
         {
-            Curso model = await context.Cursos.FindAsync(id);
+            Curso? model = await context.Cursos.FindAsync(id);
 
             if (model == null)
                 return NotFound("Curso inválido");
