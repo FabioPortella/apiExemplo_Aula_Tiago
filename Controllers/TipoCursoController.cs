@@ -1,8 +1,11 @@
 using System.Text.Json;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 [Route("api/[controller]")]
+[Authorize]
+[ResponseCache(NoStore = true, Duration = 0, Location = ResponseCacheLocation.None)]
 [ApiController]
 public class TipoCursoController : ControllerBase
 {
