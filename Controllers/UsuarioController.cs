@@ -98,6 +98,10 @@ public class UsuarioController : ControllerBase
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha512Signature)
             };
 
+            if(autenticado.Email.EndsWith("@ifsp.edu.br"))
+                tokenDescriptor.Subject.AddClaim(new Claim(ClaimTypes.Role, "Admin"));
+
+
             var token = tokenHandler.CreateToken(tokenDescriptor);
             usuario.Token = tokenHandler.WriteToken(token);
 

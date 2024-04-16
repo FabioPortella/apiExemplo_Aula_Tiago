@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 [Route("api/[controller]")]
-[Authorize]
+[Authorize("AdminPolicy")]
 [ResponseCache(NoStore = true, Duration = 0, Location = ResponseCacheLocation.None)]
 [ApiController]
 public class TipoCursoController : ControllerBase
